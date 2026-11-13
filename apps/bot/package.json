@@ -1,0 +1,24 @@
+{
+  "name": "@crdt-editor/bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.3.0",
+    "@crdt-editor/crdt": "*",
+    "@crdt-editor/protocol": "*",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@crdt-editor/server": "*",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

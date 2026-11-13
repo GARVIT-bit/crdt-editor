@@ -1,0 +1,16 @@
+{
+  "name": "crdt-editor",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "bench"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w @crdt-editor/server",
+    "dev:web": "npm run dev -w @crdt-editor/web",
+    "test": "npm test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}

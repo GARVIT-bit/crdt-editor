@@ -1,0 +1,242 @@
+:root {
+  --bg: #f6f7f9;
+  --paper: #ffffff;
+  --ink: #1d2330;
+  --muted: #6b7280;
+  --border: #e3e6eb;
+  --live: #15803d;
+  --warn: #b45309;
+  --bad: #b91c1c;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111318;
+    --paper: #1a1d24;
+    --ink: #e6e8ec;
+    --muted: #9aa1ad;
+    --border: #2b303a;
+    --live: #4ade80;
+    --warn: #fbbf24;
+    --bad: #f87171;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.status {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.status-online { color: var(--live); }
+.status-connecting { color: var(--warn); }
+.status-offline { color: var(--bad); }
+
+.meta {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.error {
+  border: 1px solid var(--bad);
+  color: var(--bad);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.editor {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.editor .cm-editor {
+  min-height: 70vh;
+  font-size: 15px;
+}
+.editor .cm-editor.cm-focused {
+  outline: none;
+}
+.editor .cm-content {
+  caret-color: var(--ink);
+}
+.editor .cm-gutters {
+  background: var(--paper);
+  border-right: 1px solid var(--border);
+}
+
+footer {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+header button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+header button:hover {
+  border-color: var(--muted);
+}
+
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.people .dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.people .me input {
+  font: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--border);
+  padding: 1px 2px;
+  width: 11em;
+}
+.people .me input:focus {
+  outline: none;
+  border-bottom-color: var(--muted);
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+.with-history {
+  max-width: 1200px;
+}
+.with-history main {
+  grid-template-columns: minmax(0, 1fr) 320px;
+}
+@media (max-width: 800px) {
+  .with-history main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.history {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.85rem;
+  align-self: start;
+  max-height: 80vh;
+  overflow: auto;
+}
+.history-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+.history button {
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.history-save {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0;
+}
+.history-save input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+.history ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.history li button {
+  width: 100%;
+  text-align: left;
+  display: grid;
+  gap: 2px;
+}
+.history li button span {
+  color: var(--muted);
+  font-size: 0.8em;
+}
+.history li button.active {
+  border-color: var(--muted);
+}
+.history-preview pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 8px;
+  max-height: 30vh;
+  overflow: auto;
+}
+.history-error {
+  color: var(--bad);
+}
+.history-empty {
+  color: var(--muted);
+}

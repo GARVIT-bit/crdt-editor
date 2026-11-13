@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.*
+
+# Local-only working instructions for Claude Code (not part of the project)
+CLAUDE.md
+.claude/
+
+# Logs, editor and OS files
+*.log
+*.bak
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

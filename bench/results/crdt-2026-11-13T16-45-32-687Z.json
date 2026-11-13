@@ -1,0 +1,50 @@
+{
+  "name": "crdt",
+  "date": "2026-11-13T16:45:32.693Z",
+  "machine": {
+    "cpu": "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz",
+    "cores": 8,
+    "memoryGB": 8,
+    "os": "Windows_NT 10.0.26300",
+    "node": "v24.20.0"
+  },
+  "N": 10000,
+  "runs": 5,
+  "typing-append": {
+    "rgaOpsPerSec": 11202,
+    "yjsOpsPerSec": 138695
+  },
+  "typing-random": {
+    "rgaOpsPerSec": 15715,
+    "yjsOpsPerSec": 126803
+  },
+  "remote-apply": {
+    "rgaOpsPerSec": 34672,
+    "yjsOpsPerSec": 126160
+  },
+  "merge": {
+    "rga": {
+      "n": 2500,
+      "p50": 91.60000000156288,
+      "p95": 250,
+      "p99": 340.0000000001455,
+      "max": 766.4999999997235
+    },
+    "yjs": {
+      "n": 2500,
+      "p50": 20.49999999871943,
+      "p95": 50.50000000119326,
+      "p99": 91.80000000196742,
+      "max": 578.4999999996217
+    },
+    "docChars": 10000
+  },
+  "memory": {
+    "rga": 1905744,
+    "yjs": 400592,
+    "rgaHalfDeleted": 1909832,
+    "yjsHalfDeleted": 1469152,
+    "rgaSnapshotBytes": 458933,
+    "yjsUpdateBytes": 10015
+  }
+}

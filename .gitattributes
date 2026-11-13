@@ -1,0 +1,2 @@
+# Keep LF line endings everywhere (files also run inside Linux containers).
+* text=auto eol=lf
